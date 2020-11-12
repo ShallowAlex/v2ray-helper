@@ -1,0 +1,26 @@
+name: "v2ray-helper"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - run: |
+          pip install -r requirements.txt
+          string="${{ secrets.pw }}"
+          IFS="#"
+          array=($string)
+          for var in ${array[@]}
+          do
+            python3 v2helper.py <<EOF
+            $var
+          EOF
+          done
