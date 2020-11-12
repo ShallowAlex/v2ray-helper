@@ -15,7 +15,7 @@ jobs:
           python-version: 3.7
       - run: |
           pip install -r requirements.txt
-          string="${{ secrets.pw }}"
+          string="${{ secrets.PW }}"
           IFS="#"
           array=($string)
           for var in ${array[@]}
