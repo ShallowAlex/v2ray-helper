@@ -9,6 +9,7 @@ time.sleep(random.randint(1,3))
 fromdata = {}
 if fromdata == {}:
     fromdata = input().strip()
+print(fromdata)
 
 def main():
     s = requests.session()
