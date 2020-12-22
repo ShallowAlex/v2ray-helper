@@ -6,9 +6,9 @@ import random
 # 加入随机延时
 time.sleep(random.randint(1,3))
 
-password = ""
-if password == "":
-    password = input().strip()
+fromdata = {}
+if fromdata == {}:
+    fromdata = input().strip()
 
 def main():
     s = requests.session()
@@ -17,10 +17,7 @@ def main():
     }
     url0 = f'https://forever.ypork.com/auth/login'
     r = requests.get(url0, timeout=15)
-    fromdata = {
-        'email':'469525644@qq.com',
-        'passwd': password
-    }
+
     headers0 = {
         'origin': 'https://forever.ypork.com',
         'referer' : 'https://forever.ypork.com/auth/login'
