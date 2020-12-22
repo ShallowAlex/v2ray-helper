@@ -24,4 +24,4 @@ jobs:
       - name: Run sign
         run: |
           pip install -r requirements.txt
-          echo "${{ secrets.PW }}" | tr '#' "\n" | xargs -I {} sh -c 'echo "{}" | python3 ./genshin.py'
+          echo "${{ secrets.PW }}" | tr '#' "\n" | xargs -I {} sh -c 'echo "{}" | python3 ./v2helper.py'
