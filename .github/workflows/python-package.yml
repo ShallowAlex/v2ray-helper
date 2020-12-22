@@ -8,19 +8,20 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Checkout master
+        uses: actions/checkout@v2
         with:
-          python-version: 3.7
-      - run: |
+         ref: master
+
+      - name: Set up python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Run sign
+        run: |
           pip install -r requirements.txt
-          string="${{ secrets.PW }}"
-          IFS="#"
-          array=($string)
-          for var in ${array[@]}
-          do
-            python3 v2helper.py <<EOF
-            $var
-          EOF
-          done
+          echo "${{ secrets.PW }}" | tr '#' "\n" | xargs -I {} sh -c 'echo "{}" | python3 ./genshin.py'
