@@ -15,7 +15,11 @@ jobs:
           python-version: 3.7
       - run: |
           pip install -r requirements.txt
+<<<<<<< HEAD
           string="${{ secrets.fromdata }}"
+=======
+          string="${{ secrets.PW }}"
+>>>>>>> 9af751a65664aad5bc5832b879781ec59c3c4ea6
           IFS="#"
           array=($string)
           for var in ${array[@]}
