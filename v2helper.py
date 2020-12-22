@@ -4,11 +4,10 @@ import time
 import random
 
 # 加入随机延时
-time.sleep(random.randint(1,3))
-
+# time.sleep(random.randint(1,3))
 fromdata = {}
 if fromdata == {}:
-    fromdata['email'], fromdata["password"] = input().strip().split(",")
+    fromdata['email'], fromdata["passwd"] = input("请输入密码：").strip().split(",")
 
 def main():
     s = requests.session()
@@ -26,6 +25,8 @@ def main():
     if r0.status_code == 200:
         t = json.loads(r0.text)
         print(t['msg'])
+    else:
+        print("登录失败")
 
     url2 = f"https://forever.ypork.com/user/checkin"
 
