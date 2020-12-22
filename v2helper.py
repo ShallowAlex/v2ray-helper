@@ -8,7 +8,7 @@ time.sleep(random.randint(1,3))
 
 fromdata = {}
 if fromdata == {}:
-    fromdata = eval(input().strip())
+    fromdata = json.loads(input().strip())
 print(fromdata)
 print(type(fromdata))
 
