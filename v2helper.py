@@ -7,7 +7,7 @@ import random
 # time.sleep(random.randint(1,3))
 fromdata = {}
 if fromdata == {}:
-    fromdata['email'], fromdata["passwd"] = input("请输入密码：").strip().split(",")
+    fromdata['email'], fromdata["passwd"] = input().strip().split(",")
 
 def main():
     s = requests.session()
