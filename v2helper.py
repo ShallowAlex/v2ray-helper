@@ -9,8 +9,6 @@ time.sleep(random.randint(1,3))
 fromdata = {}
 if fromdata == {}:
     fromdata['email'], fromdata["password"] = input().strip().split(",")
-print(fromdata)
-print(type(fromdata))
 
 def main():
     s = requests.session()
@@ -40,5 +38,5 @@ def main():
         print("Error")
         exit(100)
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
