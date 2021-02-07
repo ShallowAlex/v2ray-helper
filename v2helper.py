@@ -4,7 +4,7 @@ import time
 import random
 
 # 加入随机延时
-time.sleep(random.randint(1,3))
+time.sleep(random.randint(1,30))
 
 fromdata = {}
 if fromdata == {}:
