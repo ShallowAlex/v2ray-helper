@@ -24,7 +24,7 @@ def main():
     s.headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36'
     }
-    url0 = f'https://forever.ypork.com/auth/login'
+    url0 = f'https://forever.pork16.com/auth/login'
     try:
         r = requests.get(url0, timeout=15)
     except requests.exceptions.RequestException as e:
@@ -33,7 +33,7 @@ def main():
         return
 
     headers0 = {
-        'origin': 'https://forever.ypork.com',
+        'origin': 'https://forever.pork16.com',
         # 'referer' : 'https://forever.ypork.com/auth/login'
         'referer' : 'https://forever.pork16.com/auth/login' 
     }
@@ -49,7 +49,7 @@ def main():
     else:
         send_wechat("登录失败")
 
-    url2 = f"https://forever.ypork.com/user/checkin"
+    url2 = f"https://forever.pork16.com/user/checkin"
 
     r2 = s.post(url2, timeout=15)
     r2.raise_for_status()
