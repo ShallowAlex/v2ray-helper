@@ -34,7 +34,8 @@ def main():
 
     headers0 = {
         'origin': 'https://forever.ypork.com',
-        'referer' : 'https://forever.ypork.com/auth/login'
+        # 'referer' : 'https://forever.ypork.com/auth/login'
+        'referer' : 'https://forever.pork16.com/auth/login' 
     }
     try:
         r0 = s.post(url0, data=fromdata, headers=headers0, timeout=15)
